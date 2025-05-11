@@ -8,12 +8,10 @@ export default function Footer() {
     <footer className="footer flex">
       <div className="footer-content flex">
         <div className="footer-logo">
-          <Link to="/HomePage" className="logo flex">
             <h1>
               <FaUtensils className="icon" />
               Nusantara
             </h1>
-          </Link>
         </div>
         <div className="footer-links flex">
           <Link to="/about" className="footer-link">About</Link>

@@ -69,13 +69,7 @@ export default function LoginPage() {
               <h2 className="title"> solusi laparmu, kapanpun dan di manapun</h2>
               <p>Lapar?tinggal klik!</p>
             </div>
-            
-            <div className="footerDiv flex">
-              <span className="text">Don&apos;t have an account?</span>
-              <Link to={"/SignupPage"}>
-                <button className="btn">Sign Up</button>
-              </Link>
-            </div>
+    
           </div>
 
           <div className="formDiv flex">
@@ -117,10 +111,17 @@ export default function LoginPage() {
                 <span className="showMessage"> {errors.password}</span>
               )}
 
-              <button type="submit" className="btn">
+              <button type="submit" className="login-btn">
                 <span>Login</span>
                 <AiOutlineSwapRight className="icon" />
               </button>
+
+              <div className="footerDiv flex">
+                <span className="text">Don&apos;t have an account?</span>
+                <Link to={"/Signup"}>
+                  <button className="signup-btn">Sign Up</button>
+                </Link>
+              </div>
             </form>
           </div>
         </div>
