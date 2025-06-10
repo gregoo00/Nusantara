@@ -1,0 +1,152 @@
+.about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-content:hover {
+  transform: translateY(-5px);
+}
+
+.about-content h1 {
+  font-size: 2.8rem;
+  color: #1a3c34;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  color: #1a3c34;
+  margin: 2.5rem 0 1.5rem;
+  font-weight: 600;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.faq-section {
+  margin-top: 2.5rem;
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.faq-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.faq-question {
+  font-size: 1.3rem;
+  color: #1a3c34;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  cursor: pointer;
+}
+
+.faq-answer {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .about-content {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .about-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .about-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    margin: 1.5rem auto;
+    padding: 0.75rem;
+  }
+
+  .about-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .faq-question {
+    font-size: 1.2rem;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+
+  .faq-item {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    margin: 1rem auto;
+    padding: 0.5rem;
+  }
+
+  .about-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .about-content p {
+    font-size: 0.95rem;
+  }
+
+  .faq-question {
+    font-size: 1.1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.85rem;
+  }
+}

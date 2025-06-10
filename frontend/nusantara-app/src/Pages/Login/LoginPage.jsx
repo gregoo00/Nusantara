@@ -54,7 +54,7 @@ export default function LoginPage() {
   return (
     <>
       <div className="logoDiv">
-        <Link to="/HomePage" className="logo flex">
+        <Link to="/Home " className="logo flex">
           <h1>
             <FaUtensils className="icon" />
             Nusantara
@@ -66,7 +66,7 @@ export default function LoginPage() {
           <div className="videoDiv">
             <video className="bgVideo" src={video} autoPlay muted loop></video>
             <div className="textDiv">
-              <h2 className="title"> solusi laparmu, kapanpun dan di manapun</h2>
+              <h2 className="title"> Jelajah Kuliner Indonesia</h2>
               <p>Lapar?tinggal klik!</p>
             </div>
     

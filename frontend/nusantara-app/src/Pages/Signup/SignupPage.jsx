@@ -65,7 +65,7 @@ export default function SignupPage() {
   return (
     <>
       <div className="logoDiv">
-        <Link to="/HomePage" className="logo flex">
+        <Link to="/Home" className="logo flex">
           <h1>
             <FaUtensils className="icon" />
             Nusantara

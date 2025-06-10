@@ -1,5 +1,5 @@
 .footer.flex {
-    position: absolute;
+    position: display;
     bottom: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background to blend with video */
@@ -34,8 +34,10 @@
   }
   
   .footer-logo .icon {
+    color: #facc15;
     margin-right: 8px;
     font-size: 1.7rem;
+    
   }
   
   .footer-links.flex {

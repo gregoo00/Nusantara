@@ -1,0 +1,153 @@
+.main-page {
+  padding: 40px 0;
+  background-color: #f8fafc;
+}
+
+.category-section {
+  margin-bottom: 48px;
+}
+
+.category-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.restaurant-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 24px;
+  padding-bottom: 16px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Hide scrollbar but keep functionality */
+.restaurant-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.restaurant-slider {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.restaurant-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.restaurant-card {
+  flex: 0 0 auto;
+  width: 300px;
+  min-height: 400px; /* Menambahkan tinggi minimum untuk konsistensi */
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.restaurant-content {
+  padding: 16px;
+  background-color: #e4e7ed;
+  flex-grow: 1; /* Membuat konten mengisi ruang tersisa */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.restaurant-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Vendor prefix */
+  line-clamp: 2; /* Standard property */
+}
+
+.restaurant-location {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* Vendor prefix */
+  line-clamp: 2; /* Standard property */
+}
+
+.restaurant-fees {
+  font-size: 1rem;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.restaurant-grade {
+  font-size: 1rem;
+  color: #1f2937;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .restaurant-card {
+    width: 250px; /* Mengurangi lebar kartu pada layar kecil */
+    min-height: 350px;
+  }
+
+  .restaurant-image {
+    height: 150px;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .restaurant-slider {
+    justify-content: center; /* Mengatur posisi tengah pada layar lebar */
+  }
+
+  .restaurant-card {
+    width: 320px; /* Sedikit lebih lebar pada layar besar */
+  }
+}
+
+.star-icon {
+  margin-right: 4px;
+  font-size: 1rem;
+}
+.star-filled {
+  color: #facc15; /* Warna kuning emas untuk bintang penuh */
+}
+.star-half {
+  color: #facc15; /* Warna kuning emas untuk bintang setengah */
+}
+.star-empty {
+  color: #d1d5db; /* Warna abu-abu untuk bintang kosong */
+}
+.rating-value {
+  margin-left: 4px;
+  font-size: 1rem;
+  color: #1f2937;
+}

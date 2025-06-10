@@ -21,7 +21,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6; /* Slightly reduced opacity for cleaner look */
+  opacity: 0.9; /* Slightly reduced opacity for cleaner look */
+  filter: brightness(50%);
 }
 
 /* Logo styling */
@@ -40,7 +41,7 @@
 }
 
 .logo h1 {
-  color: #fff;
+  color: #ffffff;
   font-size: 2rem;
   font-weight: 700;
   display: flex;
@@ -49,6 +50,7 @@
 }
 
 .logo .icon {
+  color: #facc15;
   margin-right: 10px;
   font-size: 2.2rem;
 }
