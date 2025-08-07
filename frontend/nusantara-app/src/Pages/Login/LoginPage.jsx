@@ -18,7 +18,7 @@ export default function LoginPage() {
   }, []);
 
   const[values, setValues] = useState({
-    username :"",
+    email :"",
     password: "",
   });
 
@@ -42,7 +42,7 @@ export default function LoginPage() {
         .post("http://localhost:8081/login", values)
         .then(result => {
           if(result.data.loginStatus){
-            navigate("/dashboard");
+            navigate("/Home");
           }else{
             alert("No record existed")
           }
@@ -79,20 +79,20 @@ export default function LoginPage() {
 
             <form action="" onSubmit={handleSubmit} className="form grid">
               <div className="inputDiv">
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Email</label>
                 <div className="input flex">
                   <FaUserShield className="icon" />
                   <input
                     type="text"
                     name="username"
-                    value={values.username}
+                    value={values.email}
                     onChange={handleInput}
-                    placeholder="Enter username"
+                    placeholder="Enter Email"
                   />
                 </div>
               </div>
-              {errors.username &&(
-                <span className="showMessage"> {errors.username}</span>
+              {errors.email &&(
+                <span className="showMessage"> {errors.email}</span>
               )}
               <div className="inputDiv">
                 <label htmlFor="password">Password</label>

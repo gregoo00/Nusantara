@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import './SignupPage.css';
 import { useNavigate, Link } from 'react-router-dom';
@@ -10,6 +11,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import Footer from '../../Components/Footer/footer';
 import video from "../../assets/loginVideo.mp4";
+import SignUpValidation from './SignupValidation';
 
 export default function SignupPage() {
   useEffect(() => {
@@ -35,30 +37,25 @@ export default function SignupPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Basic validation
-    const err = {
-      email: values.email ? '' : 'Email is required',
-      username: values.username ? '' : 'Username is required',
-      password: values.password ? '' : 'Password is required',
-      confirmPassword: values.confirmPassword
-        ? values.password === values.confirmPassword
-          ? ''
-          : 'Passwords do not match'
-        : 'Confirm Password is required',
-    };
+    const err = SignUpValidation(values);
     setErrors(err);
+    console.log("Validation result:", err);
 
     if (!err.email && !err.username && !err.password && !err.confirmPassword) {
       axios
         .post('http://localhost:8081/signup', values)
         .then((result) => {
+          console.log("Server response:", result.data);
           if (result.data.signupStatus) {
-            navigate('/login');
+            navigate('/Home');
           } else {
             alert('Signup failed. Please try again.');
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => {
+          console.error("Signup request error:", err);
+          alert('Signup request error');
+        });
     }
   };
 
@@ -83,7 +80,7 @@ export default function SignupPage() {
               <h3>Create an Account</h3>
             </div>
 
-            <form action="" onSubmit={handleSubmit} className="form grid">
+            <form onSubmit={handleSubmit} className="form grid">
               <div className="inputDiv">
                 <label htmlFor="email">Email</label>
                 <div className="input flex">
@@ -96,9 +93,7 @@ export default function SignupPage() {
                     placeholder="Enter email"
                   />
                 </div>
-                {errors.email && (
-                  <span className="showMessage">{errors.email}</span>
-                )}
+                {errors.email && <span className="showMessage">{errors.email}</span>}
               </div>
 
               <div className="inputDiv">
@@ -113,9 +108,7 @@ export default function SignupPage() {
                     placeholder="Enter username"
                   />
                 </div>
-                {errors.username && (
-                  <span className="showMessage">{errors.username}</span>
-                )}
+                {errors.username && <span className="showMessage">{errors.username}</span>}
               </div>
 
               <div className="inputDiv">
@@ -130,9 +123,7 @@ export default function SignupPage() {
                     placeholder="Enter password"
                   />
                 </div>
-                {errors.password && (
-                  <span className="showMessage">{errors.password}</span>
-                )}
+                {errors.password && <span className="showMessage">{errors.password}</span>}
               </div>
 
               <div className="inputDiv">
@@ -147,13 +138,11 @@ export default function SignupPage() {
                     placeholder="Confirm password"
                   />
                 </div>
-                {errors.confirmPassword && (
-                  <span className="showMessage">{errors.confirmPassword}</span>
-                )}
+                {errors.confirmPassword && <span className="showMessage">{errors.confirmPassword}</span>}
               </div>
 
               <button type="submit" className="signup-btn">
-                <span>Sign Up </span>
+                <span>Sign Up</span>
                 <AiOutlineSwapRight className="icon" />
               </button>
 
