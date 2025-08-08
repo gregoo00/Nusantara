@@ -1,0 +1,48 @@
+Langkah-langkah buka application:
+1. Buat database di XAMPP phpmyadmin bernama "nusantara"
+2. Buat table "account" seperti di bawah ini :"
+    CREATE TABLE account (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+3. Buat table "restaurant seperti di bawah ini :"
+    CREATE TABLE restaurants (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    grade DECIMAL(2,1) NOT NULL, -- contoh: 4.3
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+4. Buat table "reviews" seperti dibawah ini :"
+    CREATE TABLE reviews (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    restaurant_id INT NOT NULL,
+    user_id INT NOT NULL,
+    rating DECIMAL(2,1) NOT NULL,
+    comment TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES account(id) ON DELETE CASCADE,
+    FOREIGN KEY (restaurant_id) REFERENCES restaurants(id) ON DELETE CASCADE
+);
+
+5. buat table "email" seperti di bawah ini :"
+    CREATE TABLE account (
+    id INT(11),
+    email VARCHAR(255),
+    PRIMARY KEY (id)
+);
+6. buka terminal vscode pada project nusantara
+7. kemudian tulis "cd backend" di terminal
+8. Tulis "npm start, lalu tulis "node server.js"
+9. Pencet ctrl+shift+` lagi
+10. Tulis "cd frontend"
+11. Tulis "npm install"
+12. Tulis "npm run dev"
+13. Pencet link vite
+14. website nusantara sudah bisa di gunakan
+
+Catatan: harus sudah install node di laptop/pc
